@@ -129,8 +129,8 @@ export const CASE_STUDIES = [
     title: "Dental Clinic Automation",
     client: "SmileBright Dental",
     industry: "Healthcare",
-    before: "Losing 12+ calls/day to voicemail, staff overwhelmed with manual booking, 40+ hours/month wasted on scheduling",
-    after: "AI answers every call, books 3x more appointments, 40hrs/month saved — staff focuses on patients, not phones",
+    before: "12+ missed calls daily, 40hrs/month wasted on manual scheduling, patients hanging up and booking competitors",
+    after: "Booked 32 patients in 14 days, 40hrs/month freed up, zero missed calls — front desk focuses on in-office care",
     problem:
       "The clinic was losing potential patients due to missed calls and slow manual appointment booking. Staff spent 40+ hours per month on scheduling alone.",
     solution:
@@ -146,8 +146,8 @@ export const CASE_STUDIES = [
     title: "HVAC Service Lead Recovery",
     client: "CoolBreeze HVAC",
     industry: "Home Services",
-    before: "60% of after-hours calls went to voicemail, emergency requests lost overnight, thousands in missed revenue weekly",
-    after: "95% of calls answered instantly, 35% more jobs booked, response time cut by 12 hours — zero leads lost overnight",
+    before: "60% of after-hours calls lost to voicemail, $4,000+/week in missed emergency repairs, no way to capture overnight leads",
+    after: "Handled 500+ calls in first month, 35% more jobs booked, $6,200/month in recovered revenue from after-hours leads",
     problem:
       "Over 60% of after-hours calls went to voicemail. Emergency repair requests were lost overnight, costing thousands in missed revenue weekly.",
     solution:
@@ -163,8 +163,8 @@ export const CASE_STUDIES = [
     title: "Med Spa Multi-Channel Booking",
     client: "GlowUp Aesthetics",
     industry: "Med Spa",
-    before: "6 messaging channels, 1 front desk person, 4+ hour response times, 40% of inquiries never answered",
-    after: "AI handles all 6 channels simultaneously, 5-second responses, 60% more consultations booked, zero missed inquiries",
+    before: "1,200+ monthly messages across 6 channels, 1 overwhelmed front desk person, 4-hour avg response, 40% of leads ghosted",
+    after: "1,200+ messages handled automatically, 5-second response time, increased conversion by 40%, zero missed inquiries",
     problem:
       "Leads were coming in from Instagram, WhatsApp, and the website but the front desk could only handle one channel at a time. Response times averaged 4+ hours, and 40% of inquiries never got a reply.",
     solution:
@@ -329,12 +329,12 @@ export const ABOUT_PROFILE = {
     },
   ],
   metrics: [
-    { value: "85%", label: "Reduction in automation complexity" },
-    { value: "8", label: "Channels unified under one AI" },
-    { value: "146", label: "Nodes optimized" },
-    { value: "4", label: "Production clients live" },
-    { value: "18", label: "Production workflows" },
+    { value: "500+", label: "Calls handled by AI" },
+    { value: "1,200+", label: "Messages automated" },
+    { value: "40%", label: "Increased conversion" },
+    { value: "32", label: "Patients booked in 14 days" },
     { value: "24/7", label: "AI availability" },
+    { value: "$6.2K", label: "Monthly revenue recovered" },
   ],
   techStack: [
     { layer: "Automation Engine", tech: "n8n (18 workflows, 146 nodes)" },

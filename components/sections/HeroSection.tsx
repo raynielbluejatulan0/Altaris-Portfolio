@@ -143,18 +143,17 @@ export function HeroSection() {
               variants={blurFadeInUp}
               className="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-heading font-bold text-foreground leading-[1.1] text-balance"
             >
-              Stop Losing Leads.{" "}
-              <span className="text-gradient">Start Booking</span>{" "}
-              Automatically.
+              We turn missed calls into{" "}
+              <span className="text-gradient">booked patients</span>{" "}
+              &mdash; automatically.
             </motion.h1>
 
             <motion.p
               variants={blurFadeInUp}
               className="mt-6 text-lg sm:text-xl lg:text-lg text-foreground-muted max-w-2xl lg:max-w-none text-balance leading-relaxed mx-auto lg:mx-0"
             >
-              Your phone rings. Nobody picks up. That lead is gone. We fix that
-              &mdash; with AI that answers every call, books every appointment,
-              and never takes a day off.
+              We install an AI receptionist that books patients for you 24/7.
+              No missed calls. No manual scheduling. Just more revenue on autopilot.
             </motion.p>
 
             <motion.div
@@ -165,8 +164,8 @@ export function HeroSection() {
                 Book a Free Call
                 <ArrowRight size={18} />
               </Button>
-              <Button variant="outline" size="lg" href="#flow">
-                See How It Works
+              <Button variant="outline" size="lg" href="#automation">
+                Watch Live Demo
               </Button>
             </motion.div>
 

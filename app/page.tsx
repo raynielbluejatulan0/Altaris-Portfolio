@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <FlowSection />
       <AutomationDemoSection />
+      <FlowSection />
       <ConversionSection />
       <ServicesSection />
       <CaseStudiesSection />

@@ -13,6 +13,7 @@ import {
   Circle,
   Globe,
   Star,
+  ArrowRight,
 } from "lucide-react";
 import { ABOUT_PROFILE, CONTACT } from "@/lib/constants";
 import { useFocusTrap } from "@/lib/useFocusTrap";
@@ -216,7 +217,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
               {/* Key Metrics */}
               <div className="mb-8">
                 <h3 className="text-sm font-semibold text-foreground-dim uppercase tracking-wider mb-3">
-                  Key Metrics
+                  Client Results
                 </h3>
                 <div className="grid grid-cols-3 gap-3">
                   {ABOUT_PROFILE.metrics.map((m) => (
@@ -296,27 +297,40 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 </div>
               </div>
 
-              {/* Contact Links */}
-              <div>
-                <h3 className="text-sm font-semibold text-foreground-dim uppercase tracking-wider mb-3">
-                  Get In Touch
-                </h3>
-                <div className="flex flex-col sm:flex-row gap-3">
+              {/* Primary CTA */}
+              <div className="rounded-2xl bg-gradient-to-r from-primary/10 via-surface to-secondary/10 border border-white/10 p-6 text-center">
+                <p className="text-lg font-heading font-semibold text-foreground mb-2">
+                  Ready to automate your business?
+                </p>
+                <p className="text-sm text-foreground-muted mb-5">
+                  Book a free call and I&apos;ll show you exactly how AI can work for your business.
+                </p>
+                <a
+                  href={CONTACT.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={onClose}
+                  className="inline-flex items-center gap-2 rounded-xl bg-primary hover:bg-primary/90 text-white font-semibold px-6 py-3 text-sm transition-colors"
+                >
+                  Book a Call
+                  <ArrowRight size={16} />
+                </a>
+                <div className="mt-4 flex items-center justify-center gap-4">
                   <a
                     href={CONTACT.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-primary/20 px-4 py-3 text-sm text-foreground-muted hover:text-foreground transition-all duration-200 hover:bg-white/[0.08]"
+                    className="flex items-center gap-1.5 text-xs text-foreground-dim hover:text-foreground transition-colors"
                   >
-                    <Phone size={16} className="text-primary-300" />
+                    <Phone size={12} />
                     WhatsApp
                   </a>
                   <a
                     href={`mailto:${CONTACT.email}`}
-                    className="flex items-center gap-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-secondary/20 px-4 py-3 text-sm text-foreground-muted hover:text-foreground transition-all duration-200 hover:bg-white/[0.08]"
+                    className="flex items-center gap-1.5 text-xs text-foreground-dim hover:text-foreground transition-colors"
                   >
-                    <Mail size={16} className="text-secondary-300" />
-                    {CONTACT.email}
+                    <Mail size={12} />
+                    Email
                   </a>
                 </div>
               </div>
