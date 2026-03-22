@@ -75,23 +75,15 @@ export default async function Image() {
             marginBottom: "24px",
           }}
         >
-          {/* Logo icon - stylized "A" shape */}
-          <div
-            style={{
-              width: "48px",
-              height: "48px",
-              background: "linear-gradient(135deg, #6C5CE7, #00D1FF)",
-              borderRadius: "12px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "28px",
-              fontWeight: 800,
-              color: "white",
-            }}
-          >
-            A
-          </div>
+          {/* Logo icon */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://altaris.online/images/altaris-logo.png"
+            alt=""
+            width={48}
+            height={48}
+            style={{ borderRadius: "12px" }}
+          />
           <span
             style={{
               fontSize: "48px",
@@ -165,7 +157,7 @@ export default async function Image() {
               display: "flex",
             }}
           >
-            altaris.dev
+            altaris.online
           </div>
         </div>
 
