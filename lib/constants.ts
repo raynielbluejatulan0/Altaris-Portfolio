@@ -7,11 +7,11 @@ export const SITE = {
 };
 
 export const NAV_LINKS = [
-  { label: "Services", href: "#services" },
   { label: "How It Works", href: "#flow" },
   { label: "Live Demos", href: "#automation" },
-  { label: "Behind the Scenes", href: "#workflows" },
   { label: "Who This Is For", href: "#who-its-for" },
+  { label: "Services", href: "#services" },
+  { label: "Behind the Scenes", href: "#workflows" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#cta" },
 ];
@@ -129,6 +129,8 @@ export const CASE_STUDIES = [
     title: "Dental Clinic Automation",
     client: "SmileBright Dental",
     industry: "Healthcare",
+    before: "Losing 12+ calls/day to voicemail, staff overwhelmed with manual booking, 40+ hours/month wasted on scheduling",
+    after: "AI answers every call, books 3x more appointments, 40hrs/month saved — staff focuses on patients, not phones",
     problem:
       "The clinic was losing potential patients due to missed calls and slow manual appointment booking. Staff spent 40+ hours per month on scheduling alone.",
     solution:
@@ -144,6 +146,8 @@ export const CASE_STUDIES = [
     title: "HVAC Service Lead Recovery",
     client: "CoolBreeze HVAC",
     industry: "Home Services",
+    before: "60% of after-hours calls went to voicemail, emergency requests lost overnight, thousands in missed revenue weekly",
+    after: "95% of calls answered instantly, 35% more jobs booked, response time cut by 12 hours — zero leads lost overnight",
     problem:
       "Over 60% of after-hours calls went to voicemail. Emergency repair requests were lost overnight, costing thousands in missed revenue weekly.",
     solution:
@@ -159,6 +163,8 @@ export const CASE_STUDIES = [
     title: "Med Spa Multi-Channel Booking",
     client: "GlowUp Aesthetics",
     industry: "Med Spa",
+    before: "6 messaging channels, 1 front desk person, 4+ hour response times, 40% of inquiries never answered",
+    after: "AI handles all 6 channels simultaneously, 5-second responses, 60% more consultations booked, zero missed inquiries",
     problem:
       "Leads were coming in from Instagram, WhatsApp, and the website but the front desk could only handle one channel at a time. Response times averaged 4+ hours, and 40% of inquiries never got a reply.",
     solution:

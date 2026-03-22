@@ -101,25 +101,31 @@ export function CaseStudiesSection() {
                 </div>
               </div>
 
-              {/* Problem / Solution split */}
-              <div className="grid md:grid-cols-2">
+              {/* Before → After block */}
+              <div className="grid md:grid-cols-[1fr,auto,1fr] border-b border-white/5">
                 <motion.div
-                  className="p-8 sm:p-10 md:border-r border-b md:border-b-0 border-white/5"
+                  className="p-8 sm:p-10"
                   variants={slideInLeft}
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  <div className="flex items-center gap-2 text-red-400 mb-4">
-                    <AlertCircle size={18} />
-                    <span className="text-sm font-semibold uppercase tracking-wider">
-                      Problem
+                  <div className="flex items-center gap-2 text-red-400 mb-3">
+                    <AlertCircle size={16} />
+                    <span className="text-xs font-bold uppercase tracking-wider">
+                      Before
                     </span>
                   </div>
                   <p className="text-foreground-muted text-body-sm leading-relaxed">
-                    {study.problem}
+                    {study.before}
                   </p>
                 </motion.div>
+
+                <div className="hidden md:flex items-center">
+                  <div className="flex flex-col items-center gap-1">
+                    <ArrowRight size={20} className="text-primary-300" />
+                  </div>
+                </div>
 
                 <motion.div
                   className="p-8 sm:p-10"
@@ -128,21 +134,41 @@ export function CaseStudiesSection() {
                   whileInView="visible"
                   viewport={{ once: true }}
                 >
-                  <div className="flex items-center gap-2 text-success mb-4">
-                    <CheckCircle2 size={18} />
-                    <span className="text-sm font-semibold uppercase tracking-wider">
-                      Solution
+                  <div className="flex items-center gap-2 text-success mb-3">
+                    <CheckCircle2 size={16} />
+                    <span className="text-xs font-bold uppercase tracking-wider">
+                      After
                     </span>
                   </div>
                   <p className="text-foreground-muted text-body-sm leading-relaxed">
+                    {study.after}
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Problem / Solution detail */}
+              <div className="grid md:grid-cols-2">
+                <div className="p-8 sm:p-10 md:border-r border-b md:border-b-0 border-white/5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-foreground-dim mb-3">
+                    The Problem
+                  </p>
+                  <p className="text-foreground-muted text-body-sm leading-relaxed">
+                    {study.problem}
+                  </p>
+                </div>
+
+                <div className="p-8 sm:p-10">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-foreground-dim mb-3">
+                    Our Solution
+                  </p>
+                  <p className="text-foreground-muted text-body-sm leading-relaxed">
                     {study.solution}
                   </p>
-
                   <div className="mt-4 flex items-center gap-1.5 text-primary text-sm font-medium">
                     <ArrowRight size={14} />
                     <span>{study.techUsed}</span>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
               {/* Results */}

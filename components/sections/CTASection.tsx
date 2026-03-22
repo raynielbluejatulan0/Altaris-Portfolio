@@ -54,22 +54,21 @@ export function CTASection() {
           variants={blurFadeInUp}
           className="text-display-sm sm:text-display-md lg:text-display-lg font-heading font-bold text-foreground text-balance"
         >
-          Ready to{" "}
-          <span className="text-gradient">Automate</span>{" "}
-          Your Business?
+          Every Missed Call Is a{" "}
+          <span className="text-gradient">Lost Customer</span>
         </motion.h2>
 
         <motion.p
           variants={blurFadeInUp}
           className="mt-6 text-body-lg text-foreground-muted max-w-xl mx-auto"
         >
-          Stop losing leads to missed calls and slow replies. Let&apos;s talk
-          about how AI can fill your calendar on autopilot.
+          I take on 3 new clients per month to deliver quality. Let&apos;s see
+          if we&apos;re a fit.
         </motion.p>
 
         <motion.div variants={blurFadeInUp} className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" href={CONTACT.whatsapp}>
-            Message Me on WhatsApp
+            Get Your Free Automation Audit
             <ArrowRight size={18} />
           </Button>
           <Button variant="outline" size="lg" href={`mailto:${CONTACT.email}`}>
@@ -89,7 +88,7 @@ export function CTASection() {
           variants={blurFadeInUp}
           className="mt-3 text-body-sm text-foreground-dim"
         >
-          Fast setup &bull; Custom-built &bull; Scalable for agencies
+          Custom-built &bull; Delivered in 2 weeks &bull; Scalable for agencies
         </motion.p>
       </motion.div>
     </section>

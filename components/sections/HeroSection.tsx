@@ -8,9 +8,7 @@ import {
   Zap,
   BarChart3,
   PhoneIncoming,
-  Clock,
   CalendarCheck,
-  Database,
   Brain,
   Workflow,
 } from "lucide-react";
@@ -25,12 +23,6 @@ const stats = [
   { value: "24/7", label: "AI Availability" },
 ];
 
-const benefits = [
-  { icon: Clock, text: "24/7 instant call & message handling" },
-  { icon: PhoneIncoming, text: "AI answers every missed call" },
-  { icon: CalendarCheck, text: "Automated appointment booking" },
-  { icon: Database, text: "CRM updated in real time" },
-];
 
 const floatingIcons = [
   { icon: Bot, x: "10%", y: "20%", delay: 0, size: 28 },
@@ -160,25 +152,10 @@ export function HeroSection() {
               variants={blurFadeInUp}
               className="mt-6 text-lg sm:text-xl lg:text-lg text-foreground-muted max-w-2xl lg:max-w-none text-balance leading-relaxed mx-auto lg:mx-0"
             >
-              We build AI systems that answer your calls, reply to messages, book
-              appointments, and update your CRM — all on autopilot, 24/7.
+              Your phone rings. Nobody picks up. That lead is gone. We fix that
+              &mdash; with AI that answers every call, books every appointment,
+              and never takes a day off.
             </motion.p>
-
-            {/* Benefit bullets */}
-            <motion.div
-              variants={blurFadeInUp}
-              className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3"
-            >
-              {benefits.map((b) => (
-                <div
-                  key={b.text}
-                  className="flex items-center gap-2 text-sm text-foreground-muted"
-                >
-                  <b.icon size={16} className="text-primary-300 flex-shrink-0" />
-                  <span>{b.text}</span>
-                </div>
-              ))}
-            </motion.div>
 
             <motion.div
               variants={blurFadeInUp}
@@ -193,11 +170,12 @@ export function HeroSection() {
               </Button>
             </motion.div>
 
+            {/* Urgency stat */}
             <motion.p
               variants={blurFadeInUp}
               className="mt-4 text-xs text-foreground-dim text-center lg:text-left"
             >
-              Free 20-min consultation · No commitment required
+              Most businesses respond in 47 hours. <span className="text-primary-300 font-semibold">Your AI responds in 5 seconds.</span>
             </motion.p>
 
             {/* Personal trust line */}
@@ -205,8 +183,7 @@ export function HeroSection() {
               variants={blurFadeInUp}
               className="mt-6 text-sm text-foreground-dim/80 italic"
             >
-              Built by an AI automation specialist focused on real business results
-              &mdash; not just demos.
+              I personally build every system. No outsourcing, no templates &mdash; just custom AI that works for your business.
             </motion.p>
           </div>
 
