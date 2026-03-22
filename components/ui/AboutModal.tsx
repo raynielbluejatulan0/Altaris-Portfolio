@@ -15,7 +15,7 @@ import {
   Star,
   ArrowRight,
 } from "lucide-react";
-import { ABOUT_PROFILE, CONTACT } from "@/lib/constants";
+import { ABOUT_PROFILE, CONTACT, WORKFLOW_GALLERY } from "@/lib/constants";
 import { useFocusTrap } from "@/lib/useFocusTrap";
 
 interface AboutModalProps {
@@ -292,6 +292,36 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                     >
                       <PlayCircle size={18} className="text-primary-300" />
                       {video.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Under the Hood — workflow screenshots */}
+              <div className="mb-8">
+                <h3 className="text-sm font-semibold text-foreground-dim uppercase tracking-wider mb-3">
+                  Under the Hood
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {WORKFLOW_GALLERY.map((wf) => (
+                    <a
+                      key={wf.src}
+                      href="#workflows"
+                      onClick={onClose}
+                      className="group rounded-xl overflow-hidden border border-white/5 hover:border-primary/20 transition-colors"
+                    >
+                      <div className="relative aspect-video bg-black/30">
+                        <Image
+                          src={wf.src}
+                          alt={wf.alt}
+                          fill
+                          className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                          sizes="(max-width: 640px) 50vw, 33vw"
+                        />
+                      </div>
+                      <p className="px-2 py-1.5 text-[10px] text-foreground-dim leading-tight truncate">
+                        {wf.caption}
+                      </p>
                     </a>
                   ))}
                 </div>
