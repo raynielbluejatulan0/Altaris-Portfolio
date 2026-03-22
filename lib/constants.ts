@@ -329,12 +329,12 @@ export const ABOUT_PROFILE = {
     },
   ],
   metrics: [
-    { value: "500+", label: "Calls handled by AI" },
-    { value: "1,200+", label: "Messages automated" },
-    { value: "40%", label: "Increased conversion" },
-    { value: "32", label: "Patients booked in 14 days" },
-    { value: "24/7", label: "AI availability" },
-    { value: "$6.2K", label: "Monthly revenue recovered" },
+    { value: "18", label: "Workflows built" },
+    { value: "146", label: "Nodes engineered" },
+    { value: "8", label: "Channels integrated" },
+    { value: "3", label: "AI systems deployed" },
+    { value: "24/7", label: "Systems running live" },
+    { value: "2", label: "Voice agents in production" },
   ],
   techStack: [
     { layer: "Automation Engine", tech: "n8n (18 workflows, 146 nodes)" },

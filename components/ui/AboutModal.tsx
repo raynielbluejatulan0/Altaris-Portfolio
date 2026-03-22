@@ -217,7 +217,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
               {/* Key Metrics */}
               <div className="mb-8">
                 <h3 className="text-sm font-semibold text-foreground-dim uppercase tracking-wider mb-3">
-                  Client Results
+                  What I&apos;ve Built
                 </h3>
                 <div className="grid grid-cols-3 gap-3">
                   {ABOUT_PROFILE.metrics.map((m) => (
