@@ -269,7 +269,7 @@ export const ABOUT_PROFILE = {
   name: "Rayniel Blue Jatulan",
   title: "AI Automation Specialist",
   subtitle: "I build the AI systems that replace your front desk — so your team focuses on patients, not phones.",
-  photo: "/images/proffesional-image (4).png",
+  photo: "/images/dark.png",
   availability: "Available for freelance & agency partnerships",
   timezone: "GMT+8 · Async-first · Remote",
   bio: "I've been working in AI since 2022 — starting with generative AI and content creation before going all-in on AI automation in 2025. Today, I build production-ready voice agents, messaging systems, and workflow automation that handle calls, book appointments, and update CRMs — running 24/7 for real businesses.",
