@@ -329,12 +329,12 @@ export const ABOUT_PROFILE = {
     },
   ],
   metrics: [
-    { value: "18", label: "Workflows built" },
-    { value: "146", label: "Nodes engineered" },
-    { value: "8", label: "Channels integrated" },
-    { value: "3", label: "AI systems deployed" },
     { value: "24/7", label: "Systems running live" },
     { value: "2", label: "Voice agents in production" },
+    { value: "3", label: "AI systems deployed" },
+    { value: "8", label: "Channels integrated" },
+    { value: "146", label: "Nodes engineered" },
+    { value: "18", label: "Workflows built" },
   ],
   techStack: [
     { layer: "Automation Engine", tech: "n8n (18 workflows, 146 nodes)" },
