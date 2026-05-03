@@ -32,11 +32,20 @@ export function Navbar() {
                 RBJ
               </span>
             </span>
-            <span
-              className="font-heading font-bold text-lg text-primary glow-text"
-              style={{ fontFamily: "var(--font-bai-jamjuree)" }}
-            >
-              Rayniel Blue Jatulan
+            <span className="flex flex-col">
+              <span
+                className="font-heading font-bold text-lg text-primary glow-text leading-tight"
+                style={{ fontFamily: "var(--font-bai-jamjuree)" }}
+              >
+                Rayniel Blue Jatulan
+              </span>
+              <span
+                className="h-px w-full"
+                style={{
+                  background: "linear-gradient(to right, #00FFFF, rgba(0,255,255,0.1))",
+                  boxShadow: "0 0 6px 1px rgba(0,255,255,0.5)",
+                }}
+              />
             </span>
           </a>
 
