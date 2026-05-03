@@ -1,6 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const TESTIMONIALS = [
   {
@@ -59,6 +61,9 @@ const TESTIMONIALS = [
   },
 ];
 
+const CARDS_PER_PAGE = 3;
+const TOTAL_PAGES = Math.ceil(TESTIMONIALS.length / CARDS_PER_PAGE);
+
 function StarRow() {
   return (
     <div className="flex gap-0.5 mb-4">
@@ -72,6 +77,33 @@ function StarRow() {
 }
 
 export function TestimonialsSection() {
+  const [page, setPage] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  function goTo(next: number) {
+    setDirection(next > page ? 1 : -1);
+    setPage(next);
+  }
+
+  function prev() {
+    goTo((page - 1 + TOTAL_PAGES) % TOTAL_PAGES);
+  }
+
+  function next() {
+    goTo((page + 1) % TOTAL_PAGES);
+  }
+
+  const visible = TESTIMONIALS.slice(
+    page * CARDS_PER_PAGE,
+    page * CARDS_PER_PAGE + CARDS_PER_PAGE
+  );
+
+  const variants = {
+    enter: (dir: number) => ({ opacity: 0, x: dir > 0 ? 60 : -60 }),
+    center: { opacity: 1, x: 0 },
+    exit: (dir: number) => ({ opacity: 0, x: dir > 0 ? -60 : 60 }),
+  };
+
   return (
     <section id="testimonials" className="relative py-24 bg-surface/20 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
@@ -96,39 +128,85 @@ export function TestimonialsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.div
-              key={t.name}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="glow-card rounded-lg p-6 flex flex-col hover:border-primary/30 transition-all duration-300"
+        {/* Carousel */}
+        <div className="relative">
+          <div className="overflow-hidden">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={page}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="grid grid-cols-1 md:grid-cols-3 gap-5"
+              >
+                {visible.map((t) => (
+                  <div
+                    key={t.name}
+                    className="glow-card rounded-lg p-6 flex flex-col hover:border-primary/30 transition-all duration-300"
+                  >
+                    <StarRow />
+
+                    <p className="text-foreground-muted text-xs leading-relaxed flex-1 mb-6">
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+
+                    <div className="flex items-center gap-3 pt-4 border-t border-primary/10">
+                      <div
+                        className={`w-9 h-9 rounded-full border flex items-center justify-center text-[10px] font-mono font-bold shrink-0 ${t.color}`}
+                      >
+                        {t.initials}
+                      </div>
+                      <div>
+                        <p className="text-foreground text-xs font-heading font-semibold">
+                          {t.name}
+                        </p>
+                        <p className="text-foreground-dim text-[10px] font-mono">
+                          {t.role} · {t.company}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Navigation */}
+          <div className="flex items-center justify-center gap-4 mt-10">
+            <button
+              onClick={prev}
+              className="w-10 h-10 rounded-sm border border-primary/20 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-200"
+              aria-label="Previous testimonials"
             >
-              <StarRow />
+              <ChevronLeft size={18} />
+            </button>
 
-              <p className="text-foreground-muted text-xs leading-relaxed flex-1 mb-6">
-                &ldquo;{t.quote}&rdquo;
-              </p>
+            <div className="flex gap-2">
+              {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => goTo(i)}
+                  className={`transition-all duration-200 rounded-full ${
+                    i === page
+                      ? "w-6 h-2 bg-primary"
+                      : "w-2 h-2 bg-primary/25 hover:bg-primary/50"
+                  }`}
+                  aria-label={`Go to page ${i + 1}`}
+                />
+              ))}
+            </div>
 
-              <div className="flex items-center gap-3 pt-4 border-t border-primary/10">
-                <div
-                  className={`w-9 h-9 rounded-full border flex items-center justify-center text-[10px] font-mono font-bold shrink-0 ${t.color}`}
-                >
-                  {t.initials}
-                </div>
-                <div>
-                  <p className="text-foreground text-xs font-heading font-semibold">
-                    {t.name}
-                  </p>
-                  <p className="text-foreground-dim text-[10px] font-mono">
-                    {t.role} · {t.company}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            <button
+              onClick={next}
+              className="w-10 h-10 rounded-sm border border-primary/20 flex items-center justify-center text-primary hover:bg-primary/10 hover:border-primary/50 transition-all duration-200"
+              aria-label="Next testimonials"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
         </div>
       </div>
     </section>
