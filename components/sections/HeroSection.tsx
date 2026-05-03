@@ -17,26 +17,48 @@ export function HeroSection() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Left — copy */}
+          {/* Photo — order-1 on mobile (above text), order-2 on desktop (right column) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="flex justify-center lg:justify-end order-1 lg:order-2"
+          >
+            <div className="relative">
+              <div className="absolute inset-0 rounded-2xl bg-primary/15 blur-3xl scale-105 pointer-events-none" />
+              <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[410px] lg:w-[360px] lg:h-[460px] rounded-2xl overflow-hidden border border-primary/25 shadow-glow-md">
+                <Image
+                  src={ABOUT_PROFILE.photo}
+                  alt={ABOUT_PROFILE.name}
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Copy — order-2 on mobile (below photo), order-1 on desktop (left column) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
-            {/* Label */}
+            {/* Label — smaller tracking on mobile to fit one line */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
               className="inline-block mb-6"
             >
-              <span className="text-xs font-mono tracking-[0.25em] uppercase text-primary border border-primary/30 px-3 py-1.5 rounded-sm bg-primary/5">
+              <span className="text-[10px] sm:text-xs font-mono tracking-[0.12em] sm:tracking-[0.25em] uppercase text-primary border border-primary/30 px-3 py-1.5 rounded-sm bg-primary/5 whitespace-nowrap">
                 WORKFLOWS · AGENTS · INTERNAL TOOLS
               </span>
             </motion.div>
 
-            {/* Headline — matches kim-b exactly */}
+            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,7 +72,7 @@ export function HeroSection() {
               </span>
             </motion.h1>
 
-            {/* Subtext — matches kim-b exactly */}
+            {/* Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -71,7 +93,7 @@ export function HeroSection() {
               {ABOUT_PROFILE.availability} &middot; {ABOUT_PROFILE.timezone}
             </motion.p>
 
-            {/* CTAs */}
+            {/* CTAs — full width on mobile */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -80,41 +102,19 @@ export function HeroSection() {
             >
               <a
                 href="#what-i-can-build"
-                className="flex items-center gap-2 px-7 py-3 bg-primary text-black font-heading font-bold text-sm rounded-sm hover:bg-primary/90 transition-all duration-200 shadow-glow-sm"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 bg-primary text-black font-heading font-bold text-sm rounded-sm hover:bg-primary/90 transition-all duration-200 shadow-glow-sm"
               >
                 See My Work
                 <ArrowDown size={15} />
               </a>
               <a
                 href="#contact"
-                className="flex items-center gap-2 px-7 py-3 border border-primary/40 text-primary font-mono text-sm rounded-sm hover:bg-primary/10 hover:border-primary/70 transition-all duration-200 glow-border"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3 border border-primary/40 text-primary font-mono text-sm rounded-sm hover:bg-primary/10 hover:border-primary/70 transition-all duration-200 glow-border"
               >
                 <MessageCircle size={15} />
                 Get in Touch
               </a>
             </motion.div>
-          </motion.div>
-
-          {/* Right — photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex justify-center lg:justify-end"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 rounded-2xl bg-primary/15 blur-3xl scale-105 pointer-events-none" />
-              <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[410px] lg:w-[360px] lg:h-[460px] rounded-2xl overflow-hidden border border-primary/25 shadow-glow-md">
-                <Image
-                  src={ABOUT_PROFILE.photo}
-                  alt={ABOUT_PROFILE.name}
-                  fill
-                  className="object-cover object-top"
-                  priority
-                  sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
-                />
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>
