@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import Image from "next/image";
 import { NAV_LINKS } from "@/lib/constants";
 
 export function Navbar() {
@@ -28,18 +27,16 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-2.5">
-            <Image
-              src="/images/altaris-logo.png"
-              alt="Altaris"
-              width={26}
-              height={26}
-              className="rounded-md"
-            />
+            <span className="w-7 h-7 rounded-md bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
+              <span className="text-[10px] font-heading font-bold text-primary tracking-tight leading-none">
+                RBJ
+              </span>
+            </span>
             <span
               className="font-heading font-bold text-lg text-primary glow-text"
               style={{ fontFamily: "var(--font-bai-jamjuree)" }}
             >
-              Altaris
+              Rayniel Blue Jatulan
             </span>
           </a>
 
