@@ -8,38 +8,98 @@ import { SectionContainer } from "@/components/ui/SectionContainer";
 export function AboutSection() {
   return (
     <SectionContainer id="about">
-      <motion.div
-        className="max-w-3xl mx-auto"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
-      >
-        {/* Section label */}
-        <motion.p
-          variants={blurFadeInUp}
-          className="text-xs font-semibold uppercase tracking-widest text-primary-300 mb-8"
+      <div className="max-w-3xl mx-auto">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
         >
-          About
-        </motion.p>
+          {/* Section label */}
+          <motion.p
+            variants={blurFadeInUp}
+            className="text-xs font-semibold uppercase tracking-widest text-primary-300 mb-8"
+          >
+            About
+          </motion.p>
 
-        {/* Bio */}
-        <motion.div variants={blurFadeInUp} className="space-y-5">
-          {ABOUT_PROFILE.bio.split("\n\n").map((paragraph, i) => (
-            <p
-              key={i}
-              className="text-lg sm:text-xl text-foreground-muted leading-relaxed"
-            >
-              {paragraph}
-            </p>
-          ))}
+          {/* Bio */}
+          <motion.div variants={blurFadeInUp} className="space-y-5">
+            {ABOUT_PROFILE.bio.split("\n\n").map((paragraph, i) => (
+              <p
+                key={i}
+                className="text-lg sm:text-xl text-foreground-muted leading-relaxed"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </motion.div>
+
+          {/* Metrics */}
+          <motion.div
+            variants={blurFadeInUp}
+            className="mt-12 grid grid-cols-3 gap-4 sm:gap-6"
+          >
+            {ABOUT_PROFILE.metrics.map((m) => (
+              <div key={m.label} className="text-center">
+                <div className="text-2xl sm:text-3xl font-heading font-bold text-gradient">
+                  {m.value}
+                </div>
+                <p className="mt-1 text-xs sm:text-sm text-foreground-dim leading-snug">
+                  {m.label}
+                </p>
+              </div>
+            ))}
+          </motion.div>
         </motion.div>
 
-        {/* Timeline */}
-        <motion.div variants={blurFadeInUp} className="mt-16">
-          <p className="text-xs font-semibold uppercase tracking-widest text-foreground-dim mb-10">
+        {/* Differentiators */}
+        <motion.div
+          className="mt-16"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          <motion.p
+            variants={blurFadeInUp}
+            className="text-xs font-semibold uppercase tracking-widest text-foreground-dim mb-8"
+          >
+            Why work with me
+          </motion.p>
+
+          <div className="space-y-5">
+            {ABOUT_PROFILE.differentiators.map((item) => (
+              <motion.div
+                key={item.title}
+                variants={blurFadeInUp}
+                className="rounded-2xl bg-surface border border-white/5 p-6 sm:p-7"
+              >
+                <h4 className="text-base font-heading font-semibold text-foreground mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-body-sm text-foreground-muted leading-relaxed">
+                  {item.detail}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Journey timeline */}
+        <motion.div
+          className="mt-16"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          <motion.p
+            variants={blurFadeInUp}
+            className="text-xs font-semibold uppercase tracking-widest text-foreground-dim mb-10"
+          >
             Journey
-          </p>
+          </motion.p>
 
           <div className="space-y-6">
             {ABOUT_PROFILE.timeline.map((item, i) => (
@@ -55,14 +115,12 @@ export function AboutSection() {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                {/* Year */}
                 <div className="shrink-0 w-12 text-right">
                   <span className="text-sm font-bold text-primary-300 font-heading tabular-nums">
                     {item.year}
                   </span>
                 </div>
 
-                {/* Dot + vertical line */}
                 <div className="relative shrink-0 flex flex-col items-center">
                   <div className="w-2 h-2 rounded-full bg-primary/60 ring-4 ring-background z-10 mt-1.5" />
                   {i < ABOUT_PROFILE.timeline.length - 1 && (
@@ -70,7 +128,6 @@ export function AboutSection() {
                   )}
                 </div>
 
-                {/* Label */}
                 <p className="text-foreground-muted leading-relaxed pt-0.5">
                   {item.label}
                 </p>
@@ -78,7 +135,7 @@ export function AboutSection() {
             ))}
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </SectionContainer>
   );
 }
