@@ -26,7 +26,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-2.5">
+          <a href="#hero" className="flex items-center gap-2.5">
             <span className="w-7 h-7 rounded-md bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
               <span className="text-[10px] font-heading font-bold text-primary tracking-tight leading-none">
                 RBJ
