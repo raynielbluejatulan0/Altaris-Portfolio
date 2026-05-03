@@ -95,9 +95,6 @@ export function AboutMeSection() {
             <p className="text-xs font-mono tracking-[0.2em] uppercase text-primary mb-4">
               About Me
             </p>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground uppercase tracking-tight mb-3">
-              About Me
-            </h2>
             {/* Cyan underline accent */}
             <div className="w-12 h-0.5 bg-primary mb-8" />
 
