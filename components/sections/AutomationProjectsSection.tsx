@@ -205,14 +205,14 @@ const PROJECTS: Project[] = [
 const NODE_STYLES: Record<string, string> = {
   trigger: "border-primary/40 bg-primary/8 text-primary",
   ai:      "border-violet-400/40 bg-violet-400/8 text-violet-300",
-  action:  "border-foreground-dim/20 bg-surface text-foreground-muted",
+  action:  "border-amber-400/40 bg-amber-400/8 text-amber-300",
   output:  "border-emerald-400/40 bg-emerald-400/8 text-emerald-300",
 };
 
 const NODE_DOT: Record<string, string> = {
   trigger: "bg-primary",
   ai:      "bg-violet-400",
-  action:  "bg-foreground-dim/50",
+  action:  "bg-amber-400",
   output:  "bg-emerald-400",
 };
 
