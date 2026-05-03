@@ -32,7 +32,7 @@ export function HeroSection() {
               className="inline-block mb-6"
             >
               <span className="text-xs font-mono tracking-[0.25em] uppercase text-primary border border-primary/30 px-3 py-1.5 rounded-sm bg-primary/5">
-                {ABOUT_PROFILE.title}
+                WORKFLOWS · AGENTS · INTERNAL TOOLS
               </span>
             </motion.div>
 

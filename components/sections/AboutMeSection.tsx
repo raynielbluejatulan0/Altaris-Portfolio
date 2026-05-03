@@ -112,7 +112,7 @@ export function AboutMeSection() {
             </p>
           </motion.div>
 
-          {/* Right — accordion cards */}
+          {/* Right — accordion cards + what I can help with */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -123,6 +123,28 @@ export function AboutMeSection() {
             {CARDS.map((card) => (
               <AccordionCard key={card.title} title={card.title} items={card.items} />
             ))}
+
+            {/* What I can help with */}
+            <div className="glow-card rounded-lg p-6">
+              <p className="text-xs font-mono font-bold tracking-[0.15em] uppercase text-primary mb-4">
+                What I Can Help With
+              </p>
+              <ul className="space-y-2.5">
+                {[
+                  "Automating research and data pipelines",
+                  "Building AI chat and voice agents",
+                  "Internal workflow automation for teams",
+                  "CRM integrations and lead management",
+                  "End-to-end agency delivery systems",
+                  "Custom AI tools for business operations",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                    <span className="text-foreground-muted text-xs leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </motion.div>
         </div>
       </div>

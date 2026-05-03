@@ -1,8 +1,8 @@
 export const SITE = {
   name: "Rayniel Blue Jatulan",
-  tagline: "AI Automation Specialist",
+  tagline: "AI Automation Builder",
   description:
-    "AI Automation Specialist building voice agents, messaging systems, and workflow automation. Open to freelance and full-time roles. GMT+8.",
+    "AI Automation Builder creating workflows, AI agents, and internal tools. Open to freelance and full-time roles. GMT+8.",
   url: "https://altaris.ai",
 };
 
@@ -258,7 +258,7 @@ export const WORKFLOW_DEMOS = [
 
 export const ABOUT_PROFILE = {
   name: "Rayniel Blue Jatulan",
-  title: "AI Automation Specialist",
+  title: "AI Automation Builder",
   subtitle:
     "I build the AI systems that replace your front desk — so your team focuses on patients, not phones.",
   photo: "/images/dark.png",

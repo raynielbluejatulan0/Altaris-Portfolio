@@ -27,7 +27,7 @@ export function HowIWorkSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
           {HOW_I_WORK.map((step, i) => (
             <motion.div
               key={step.step}
@@ -59,6 +59,39 @@ export function HowIWorkSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* I BUILD WITH */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="max-w-5xl mx-auto glow-card rounded-lg p-7 hover:border-primary/30 transition-all duration-300"
+        >
+          <p className="text-xs font-mono tracking-[0.2em] uppercase text-primary mb-5">
+            I Build With
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { tool: "Claude Code", note: "AI logic and agent behavior" },
+              { tool: "n8n", note: "Workflow orchestration" },
+              { tool: "APIs & Webhooks", note: "Integrations" },
+              { tool: "Focus", note: "Scalable, production-ready systems" },
+            ].map((item) => (
+              <div key={item.tool} className="flex items-start gap-2.5">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                <div>
+                  <p className="text-xs font-mono font-bold text-foreground">
+                    {item.tool}
+                  </p>
+                  <p className="text-[11px] font-mono text-foreground-dim mt-0.5">
+                    {item.note}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
