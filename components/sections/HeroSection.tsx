@@ -38,7 +38,7 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Headline — kim-b style: all-caps, bold, split color */}
+            {/* Headline — matches kim-b exactly */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -46,24 +46,22 @@ export function HeroSection() {
               className="font-heading font-bold text-foreground leading-[1.05] uppercase tracking-tight mb-6"
               style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
             >
-              Automate Your Front Desk
-              <br />& Scale Your Business{" "}
+              Automate Your Operations &amp; Scale{" "}
               <span className="text-primary glow-text">
-                Without Hiring
-                <br className="hidden sm:block" /> More Staff
+                Without Hiring More Staff
               </span>
             </motion.h1>
 
-            {/* Subtext */}
+            {/* Subtext — matches kim-b exactly */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.7 }}
               className="text-sm font-mono text-foreground-muted leading-relaxed mb-3 max-w-lg mx-auto lg:mx-0"
             >
-              I build AI voice agents, messaging bots, and workflow automations
-              using n8n, VAPI, and Claude — so your business handles calls and
-              bookings 24/7, automatically.
+              I build automation systems using n8n, AI, and workflow design to
+              eliminate manual work, streamline operations, and improve
+              efficiency.
             </motion.p>
 
             <motion.p

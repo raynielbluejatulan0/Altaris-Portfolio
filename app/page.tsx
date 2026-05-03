@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutMeSection } from "@/components/sections/AboutMeSection";
+import { AutomationProjectsSection } from "@/components/sections/AutomationProjectsSection";
 import { WhatICanBuildSection } from "@/components/sections/WhatICanBuildSection";
 import { HowIWorkSection } from "@/components/sections/HowIWorkSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutMeSection />
+      <AutomationProjectsSection />
       <WhatICanBuildSection />
       <HowIWorkSection />
       <ExperienceSection />
