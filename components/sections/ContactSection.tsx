@@ -1,110 +1,59 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, ArrowUpRight } from "lucide-react";
-import { staggerContainer, blurFadeInUp } from "@/lib/animations";
+import { Mail, MessageCircle } from "lucide-react";
 import { CONTACT } from "@/lib/constants";
-import { SectionContainer } from "@/components/ui/SectionContainer";
-
-const contactMethods = [
-  {
-    icon: Phone,
-    label: "WhatsApp",
-    value: CONTACT.whatsappDisplay,
-    href: CONTACT.whatsapp,
-    color: "primary" as const,
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: CONTACT.email,
-    href: `mailto:${CONTACT.email}`,
-    color: "secondary" as const,
-  },
-];
-
-const colorStyles = {
-  primary: {
-    icon: "text-primary-300",
-    bg: "bg-primary/10 border-primary/10 group-hover:border-primary/30",
-    hover: "hover:border-primary/20",
-  },
-  secondary: {
-    icon: "text-secondary-300",
-    bg: "bg-secondary/10 border-secondary/10 group-hover:border-secondary/30",
-    hover: "hover:border-secondary/20",
-  },
-};
 
 export function ContactSection() {
   return (
-    <SectionContainer id="contact">
-      <div className="text-center mb-16">
-        <h2 className="section-title">
-          Let&apos;s talk.
-        </h2>
+    <section id="contact" className="relative py-24 bg-background overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/6 via-transparent to-transparent pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <p className="text-xs font-mono tracking-[0.2em] uppercase text-primary mb-3">
+            Available Now
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            Contact
+          </h2>
+          <p className="text-foreground-muted max-w-md mx-auto text-sm">
+            Let&apos;s talk.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-5 max-w-lg mx-auto"
+        >
+          <a
+            href={CONTACT.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 w-full sm:w-auto justify-center px-8 py-4 bg-primary text-black font-heading font-bold text-sm rounded-sm hover:bg-primary/90 transition-all duration-200 shadow-glow-sm"
+          >
+            <MessageCircle size={16} />
+            WhatsApp
+          </a>
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="flex items-center gap-3 w-full sm:w-auto justify-center px-8 py-4 border border-primary/40 text-primary font-mono text-sm rounded-sm hover:bg-primary/10 hover:border-primary/70 transition-all duration-200 glow-border"
+          >
+            <Mail size={16} />
+            {CONTACT.email}
+          </a>
+        </motion.div>
       </div>
-
-      <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto"
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-      >
-        {contactMethods.map((method) => {
-          const styles = colorStyles[method.color];
-          return (
-            <motion.a
-              key={method.label}
-              href={method.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              variants={blurFadeInUp}
-              className={`group relative rounded-2xl bg-surface border border-white/5 p-8 text-center transition-colors duration-300 ${styles.hover}`}
-              whileHover={{
-                y: -8,
-                boxShadow: "0 16px 40px rgba(0, 0, 0, 0.25), 0 0 15px rgba(108, 92, 231, 0.08)",
-                borderColor: "rgba(108, 92, 231, 0.2)",
-                transition: { type: "spring", stiffness: 300, damping: 20 },
-              }}
-            >
-              {/* Hover overlay */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="relative z-10">
-                <motion.div
-                  className={`inline-flex items-center justify-center w-14 h-14 rounded-xl border ${styles.bg} transition-colors duration-300 mx-auto mb-4`}
-                  whileHover={{
-                    rotate: [0, -8, 8, 0],
-                    transition: { duration: 0.5 },
-                  }}
-                >
-                  <method.icon size={26} className={styles.icon} />
-                </motion.div>
-
-                <h3 className="font-heading font-semibold text-foreground">
-                  {method.label}
-                </h3>
-                <p className="mt-1.5 text-sm text-foreground-dim">
-                  {method.value}
-                </p>
-
-                <motion.div
-                  className="mx-auto mt-4"
-                  initial={{ opacity: 0, y: 4 }}
-                  whileHover={{ opacity: 1, y: 0 }}
-                >
-                  <ArrowUpRight
-                    size={16}
-                    className="mx-auto text-foreground-dim opacity-0 group-hover:opacity-100 group-hover:text-primary transition-all duration-300"
-                  />
-                </motion.div>
-              </div>
-            </motion.a>
-          );
-        })}
-      </motion.div>
-    </SectionContainer>
+    </section>
   );
 }

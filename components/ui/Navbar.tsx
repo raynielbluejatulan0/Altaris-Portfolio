@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { NAV_LINKS } from "@/lib/constants";
@@ -11,75 +11,66 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-white/5 shadow-lg shadow-black/10"
+          ? "bg-background/90 backdrop-blur-md border-b border-primary/10"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.a
-            href="/"
-            className="flex items-center gap-2.5 font-heading font-bold text-xl text-foreground"
-            whileHover={{
-              textShadow: "0 0 20px rgba(108, 92, 231, 0.5)",
-              transition: { duration: 0.3 },
-            }}
-          >
+          <a href="/" className="flex items-center gap-2.5">
             <Image
               src="/images/altaris-logo.png"
               alt="Altaris"
-              width={28}
-              height={28}
+              width={26}
+              height={26}
               className="rounded-md"
             />
-            Altaris
-          </motion.a>
+            <span
+              className="font-heading font-bold text-lg text-primary glow-text"
+              style={{ fontFamily: "var(--font-bai-jamjuree)" }}
+            >
+              Altaris
+            </span>
+          </a>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link, i) => (
-              <motion.a
+            {NAV_LINKS.map((link) => (
+              <a
                 key={link.href}
                 href={link.href}
-                className="relative text-sm text-foreground/70 hover:text-foreground transition-colors"
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
-                whileHover={{ y: -1 }}
+                className="text-sm text-foreground-muted hover:text-primary transition-colors duration-200"
+                style={{ fontFamily: "var(--font-space-mono)" }}
               >
                 {link.label}
-                <motion.span
-                  className="absolute -bottom-1 left-0 h-[1px] bg-primary"
-                  initial={{ width: 0 }}
-                  whileHover={{ width: "100%" }}
-                  transition={{ duration: 0.2 }}
-                />
-              </motion.a>
+              </a>
             ))}
+            <a
+              href="#contact"
+              className="text-sm font-mono border border-primary/40 text-primary px-4 py-1.5 rounded hover:bg-primary/10 hover:border-primary/70 transition-all duration-200 glow-border"
+            >
+              Hire Me
+            </a>
           </div>
 
           {/* Mobile hamburger */}
-          <motion.button
-            className="md:hidden text-foreground"
+          <button
+            className="md:hidden text-foreground-muted hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
-            whileTap={{ scale: 0.9 }}
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </div>
 
@@ -90,27 +81,31 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="md:hidden bg-surface/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
+            transition={{ duration: 0.25 }}
+            className="md:hidden bg-surface/95 backdrop-blur-md border-b border-primary/10"
           >
-            <div className="px-4 py-4 flex flex-col gap-2">
-              {NAV_LINKS.map((link, i) => (
-                <motion.a
+            <div className="px-4 py-4 flex flex-col gap-1">
+              {NAV_LINKS.map((link) => (
+                <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-foreground/70 hover:text-foreground transition-colors py-3 px-2 rounded-lg hover:bg-white/5"
                   onClick={() => setIsOpen(false)}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.05 }}
+                  className="text-sm text-foreground-muted hover:text-primary transition-colors py-3 px-2 rounded-lg hover:bg-primary/5"
                 >
                   {link.label}
-                </motion.a>
+                </a>
               ))}
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 text-sm text-center border border-primary/40 text-primary px-4 py-2 rounded hover:bg-primary/10 transition-all"
+              >
+                Hire Me
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }

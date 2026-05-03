@@ -7,12 +7,10 @@ export const SITE = {
 };
 
 export const NAV_LINKS = [
-  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
   { label: "Projects", href: "#projects" },
-  { label: "What I Build", href: "#skills" },
-  { label: "Stack", href: "#stack" },
-  { label: "Demos", href: "#demos" },
-  { label: "Workflows", href: "#workflows" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -373,3 +371,40 @@ export const ABOUT_PROFILE = {
     { title: "Messaging AI Demo", url: "#demos" },
   ],
 };
+
+export const IMPACT_STATS = [
+  { value: 18, suffix: "", label: "Workflows Built" },
+  { value: 146, suffix: "", label: "Nodes Engineered" },
+  { value: 8, suffix: "", label: "Channels Integrated" },
+  { value: 3, suffix: "", label: "AI Systems Deployed" },
+  { value: 2, suffix: "", label: "Voice Agents Live" },
+];
+
+export const HOW_I_WORK = [
+  {
+    step: "01",
+    title: "Automation Audit",
+    description:
+      "I analyze your current workflows and pinpoint the highest-impact opportunities — where time is lost, leads slip, and manual work stacks up.",
+  },
+  {
+    step: "02",
+    title: "System Design",
+    description:
+      "I architect a custom automation blueprint for your exact use case — voice AI, messaging, booking, CRM — designed to run without babysitting.",
+  },
+  {
+    step: "03",
+    title: "Build & Deploy",
+    description:
+      "I build, test, and ship the system. Then I hand it off with documentation and stay available for questions. Most systems go live in under 3 weeks.",
+  },
+];
+
+export const SKILLS_MARQUEE = [
+  "n8n", "VAPI", "Claude", "ElevenLabs", "Deepgram",
+  "GoHighLevel", "Supabase", "PostgreSQL", "Gemini",
+  "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion",
+  "Vercel", "Google Docs", "Webhooks", "ActiveCampaign",
+  "Messenger API", "WhatsApp API", "Twilio", "Make.com",
+];

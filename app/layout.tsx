@@ -1,28 +1,28 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
-import localFont from "next/font/local";
+import { Bai_Jamjuree, Space_Mono } from "next/font/google";
 import { constructMetadata, getJsonLd } from "@/lib/metadata";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import "./globals.css";
 
-const inter = Inter({
+const baiJamjuree = Bai_Jamjuree({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-bai-jamjuree",
   display: "swap",
 });
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = constructMetadata();
 
 export const viewport: Viewport = {
-  themeColor: "#0F172A",
+  themeColor: "#0A0D1A",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -39,20 +39,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" dir="ltr">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        className={`${inter.variable} ${geistSans.variable} font-sans antialiased`}
-      >
-        {/* Skip to content for accessibility */}
+      <body className={`${baiJamjuree.variable} ${spaceMono.variable} antialiased`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:outline-none"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-black focus:outline-none"
         >
           Skip to main content
         </a>

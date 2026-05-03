@@ -10,46 +10,45 @@ const config: Config = {
     extend: {
       /* ─── Color Palette ─────────────────────────────────── */
       colors: {
-        // Brand
         primary: {
-          DEFAULT: "#6C5CE7",
-          50: "#F0EEFF",
-          100: "#DDD8FC",
-          200: "#BBB1F9",
-          300: "#9A8BF6",
-          400: "#8370F0",
-          500: "#6C5CE7",
-          600: "#5A47D6",
-          700: "#4735B8",
-          800: "#35278F",
-          900: "#241B66",
+          DEFAULT: "#00FFFF",
+          50: "#E0FFFF",
+          100: "#B3FFFF",
+          200: "#80FFFF",
+          300: "#4DFFFF",
+          400: "#26FFFF",
+          500: "#00FFFF",
+          600: "#00CCCC",
+          700: "#009999",
+          800: "#006666",
+          900: "#003333",
         },
         secondary: {
-          DEFAULT: "#00D1FF",
-          50: "#E5FAFF",
-          100: "#B3F0FF",
-          200: "#80E6FF",
-          300: "#4DDBFF",
-          400: "#26D6FF",
-          500: "#00D1FF",
-          600: "#00A8CC",
-          700: "#007F99",
-          800: "#005566",
-          900: "#002C33",
+          DEFAULT: "#FBBD23",
+          50: "#FFF8E1",
+          100: "#FFEDB3",
+          200: "#FFE080",
+          300: "#FFD34D",
+          400: "#FFC926",
+          500: "#FBBD23",
+          600: "#E0A81E",
+          700: "#C49019",
+          800: "#A87814",
+          900: "#8C620F",
         },
 
         // Surfaces
-        background: "#0F172A",
+        background: "#0A0D1A",
         surface: {
-          DEFAULT: "#111827",
-          50: "#1E293B",
-          100: "#1A2332",
-          200: "#151D2B",
+          DEFAULT: "#0D1120",
+          50: "#141828",
+          100: "#111525",
+          200: "#0F1322",
         },
         foreground: {
-          DEFAULT: "#E5E7EB",
-          muted: "#B0B8C4",
-          dim: "#8891A0",
+          DEFAULT: "#E0E0E0",
+          muted: "#A0A8B8",
+          dim: "#6B7280",
         },
 
         // Semantic
@@ -61,23 +60,16 @@ const config: Config = {
 
       /* ─── Typography ────────────────────────────────────── */
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        heading: [
-          "var(--font-geist-sans)",
-          "var(--font-inter)",
-          "system-ui",
-          "sans-serif",
-        ],
-        mono: ["var(--font-geist-mono)", "monospace"],
+        sans: ["var(--font-space-mono)", "monospace"],
+        heading: ["var(--font-bai-jamjuree)", "sans-serif"],
+        mono: ["var(--font-space-mono)", "monospace"],
       },
       fontSize: {
-        // Display sizes — hero headlines
-        "display-2xl": ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-        "display-xl": ["3.75rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
-        "display-lg": ["3rem", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
-        "display-md": ["2.25rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
-        "display-sm": ["1.875rem", { lineHeight: "1.25", letterSpacing: "-0.01em" }],
-        // Body sizes
+        "display-2xl": ["4.5rem", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
+        "display-xl": ["3.75rem", { lineHeight: "1.08", letterSpacing: "-0.02em" }],
+        "display-lg": ["3rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "display-md": ["2.25rem", { lineHeight: "1.15", letterSpacing: "-0.01em" }],
+        "display-sm": ["1.875rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
         "body-xl": ["1.25rem", { lineHeight: "1.75" }],
         "body-lg": ["1.125rem", { lineHeight: "1.75" }],
         "body-md": ["1rem", { lineHeight: "1.75" }],
@@ -103,14 +95,13 @@ const config: Config = {
 
       /* ─── Box Shadows ───────────────────────────────────── */
       boxShadow: {
-        "glow-sm": "0 0 15px rgba(108, 92, 231, 0.15)",
-        "glow-md": "0 0 30px rgba(108, 92, 231, 0.2)",
-        "glow-lg": "0 0 60px rgba(108, 92, 231, 0.25)",
-        "glow-secondary-sm": "0 0 15px rgba(0, 209, 255, 0.15)",
-        "glow-secondary-md": "0 0 30px rgba(0, 209, 255, 0.2)",
-        "card": "0 4px 24px rgba(0, 0, 0, 0.2)",
-        "card-hover": "0 8px 40px rgba(0, 0, 0, 0.3)",
-        "nav": "0 2px 16px rgba(0, 0, 0, 0.25)",
+        "glow-sm": "0 0 15px rgba(0, 255, 255, 0.15)",
+        "glow-md": "0 0 30px rgba(0, 255, 255, 0.2), 0 0 60px rgba(0, 255, 255, 0.05)",
+        "glow-lg": "0 0 60px rgba(0, 255, 255, 0.25), 0 0 120px rgba(0, 255, 255, 0.08)",
+        "glow-strong": "0 0 20px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.15)",
+        "card": "0 4px 24px rgba(0, 0, 0, 0.4)",
+        "card-hover": "0 8px 40px rgba(0, 0, 0, 0.5)",
+        "nav": "0 2px 16px rgba(0, 0, 0, 0.5)",
       },
 
       /* ─── Backdrop Blur ─────────────────────────────────── */
@@ -120,9 +111,17 @@ const config: Config = {
 
       /* ─── Animations ────────────────────────────────────── */
       keyframes: {
+        "marquee-left": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-right": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 15px rgba(108, 92, 231, 0.2)" },
-          "50%": { boxShadow: "0 0 30px rgba(108, 92, 231, 0.4)" },
+          "0%, 100%": { boxShadow: "0 0 15px rgba(0, 255, 255, 0.2)" },
+          "50%": { boxShadow: "0 0 40px rgba(0, 255, 255, 0.5)" },
         },
         "shimmer": {
           "0%": { backgroundPosition: "-200% 0" },
@@ -132,25 +131,30 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-8px)" },
         },
-        "gradient-shift": {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
+        "scan": {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100vh)" },
+        },
+        "count-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
+        "marquee-left": "marquee-left 30s linear infinite",
+        "marquee-right": "marquee-right 30s linear infinite",
         "pulse-glow": "pulse-glow 3s ease-in-out infinite",
         "shimmer": "shimmer 3s linear infinite",
         "float": "float 4s ease-in-out infinite",
-        "gradient-shift": "gradient-shift 6s ease infinite",
+        "scan": "scan 8s linear infinite",
       },
 
       /* ─── Background Image ──────────────────────────────── */
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        "hero-glow": "radial-gradient(ellipse at top, rgba(108, 92, 231, 0.15) 0%, transparent 60%)",
-        "hero-glow-secondary": "radial-gradient(ellipse at bottom right, rgba(0, 209, 255, 0.08) 0%, transparent 50%)",
-        "card-gradient": "linear-gradient(135deg, rgba(108, 92, 231, 0.05) 0%, rgba(0, 209, 255, 0.05) 100%)",
+        "hero-glow": "radial-gradient(ellipse at top, rgba(0, 255, 255, 0.08) 0%, transparent 60%)",
+        "card-gradient": "linear-gradient(135deg, rgba(0, 255, 255, 0.04) 0%, transparent 100%)",
       },
 
       /* ─── Grid Template ─────────────────────────────────── */
