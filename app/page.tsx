@@ -13,8 +13,8 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutMeSection />
-      <AutomationProjectsSection />
       <WhatICanBuildSection />
+      <AutomationProjectsSection />
       <HowIWorkSection />
       <ExperienceSection />
       <SkillsSection />
