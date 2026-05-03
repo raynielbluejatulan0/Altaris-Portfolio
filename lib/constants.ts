@@ -352,18 +352,26 @@ export const ABOUT_PROFILE = {
     {
       year: "2022",
       label: "Generative AI — images & video creation",
+      description:
+        "Started with Midjourney and Stable Diffusion. Generated thousands of AI images and videos for social media brands. First real taste of AI's commercial potential — and I was hooked.",
     },
     {
       year: "2023",
       label: "AI content — YouTube, UGC, social media",
+      description:
+        "Scaled into full AI content production. Scripted, voiced, and published AI-driven YouTube videos and UGC campaigns. Helped brands grow audiences without traditional production budgets.",
     },
     {
       year: "2024",
       label: "Prompt Engineering — LLMs, fine-tuning, custom GPTs",
+      description:
+        "Went deep into LLM behavior. Built custom GPTs and engineered system prompts for GPT-4, Claude, and Gemini. Fine-tuned outputs for real business use — customer service, lead qualification, proposal drafts.",
     },
     {
       year: "2025",
       label: "AI Automation — voice agents, messaging, workflows",
+      description:
+        "All-in on automation. Built voice AI receptionists using VAPI + Claude + ElevenLabs that answer calls 24/7. Deployed multi-channel messaging agents across 8 platforms. Everything runs live and handles real interactions.",
     },
   ],
   demoVideos: [
@@ -373,8 +381,6 @@ export const ABOUT_PROFILE = {
 };
 
 export const IMPACT_STATS = [
-  { value: 18, suffix: "", label: "Workflows Built" },
-  { value: 146, suffix: "", label: "Nodes Engineered" },
   { value: 8, suffix: "", label: "Channels Integrated" },
   { value: 3, suffix: "", label: "AI Systems Deployed" },
   { value: 2, suffix: "", label: "Voice Agents Live" },
