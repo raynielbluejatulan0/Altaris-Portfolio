@@ -399,45 +399,35 @@ export function AutomationProjectsSection() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Arrow buttons */}
+          {/* Arrow buttons — inside card on mobile, outside on desktop */}
           <button
             onClick={prev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 rounded-full border border-primary/20 bg-surface flex items-center justify-center text-primary hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 hidden lg:flex"
+            className="absolute left-2 top-1/2 -translate-y-1/2 lg:left-0 lg:-translate-x-5 w-10 h-10 rounded-full border border-primary/20 bg-surface/90 flex items-center justify-center text-primary hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 z-10"
             aria-label="Previous project"
           >
             <ChevronLeft size={18} />
           </button>
           <button
             onClick={next}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 rounded-full border border-primary/20 bg-surface flex items-center justify-center text-primary hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 hidden lg:flex"
+            className="absolute right-2 top-1/2 -translate-y-1/2 lg:right-0 lg:translate-x-5 w-10 h-10 rounded-full border border-primary/20 bg-surface/90 flex items-center justify-center text-primary hover:border-primary/50 hover:bg-primary/10 transition-all duration-200 z-10"
             aria-label="Next project"
           >
             <ChevronRight size={18} />
           </button>
         </div>
 
-        {/* Mobile nav + dots */}
-        <div className="flex items-center justify-center gap-6 mt-8">
-          <button onClick={prev} className="lg:hidden text-foreground-dim hover:text-primary transition-colors">
-            <ChevronLeft size={20} />
-          </button>
-
-          <div className="flex items-center gap-2">
-            {PROJECTS.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => go(i)}
-                className={`rounded-full transition-all duration-300 ${
-                  i === current ? "w-6 h-2 bg-primary" : "w-2 h-2 bg-foreground-dim/30 hover:bg-foreground-dim/60"
-                }`}
-                aria-label={`Go to project ${i + 1}`}
-              />
-            ))}
-          </div>
-
-          <button onClick={next} className="lg:hidden text-foreground-dim hover:text-primary transition-colors">
-            <ChevronRight size={20} />
-          </button>
+        {/* Dot indicators */}
+        <div className="flex items-center justify-center gap-2 mt-8">
+          {PROJECTS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => go(i)}
+              className={`rounded-full transition-all duration-300 ${
+                i === current ? "w-6 h-2 bg-primary" : "w-2 h-2 bg-foreground-dim/30 hover:bg-foreground-dim/60"
+              }`}
+              aria-label={`Go to project ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
