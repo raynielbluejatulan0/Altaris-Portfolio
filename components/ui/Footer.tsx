@@ -23,9 +23,6 @@ export function Footer() {
           Helping businesses automate workflows and improve operations.
         </p>
 
-        {/* Divider */}
-        <div className="w-full h-px bg-primary/10 mb-7" />
-
         {/* Copyright — centered */}
         <p className="text-xs font-mono text-foreground-dim/40">
           &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
