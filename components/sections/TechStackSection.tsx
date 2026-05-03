@@ -1,124 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Brain,
-  Sparkles,
-  GitBranch,
-  PhoneCall,
-  Rocket,
-  Database,
-  Mic,
-  AudioLines,
-  Globe,
-  Palette,
-  FileCode,
-  Triangle,
-  FileText,
-  Webhook,
-} from "lucide-react";
-import { blurFadeInUp } from "@/lib/animations";
-import { TECH_STACK_ROW1, TECH_STACK_ROW2 } from "@/lib/constants";
+import { staggerContainer, blurFadeInUp } from "@/lib/animations";
+import { TECH_STACK_TABLE } from "@/lib/constants";
 import { SectionContainer } from "@/components/ui/SectionContainer";
-import { Badge } from "@/components/ui/Badge";
-import { type LucideIcon } from "lucide-react";
-
-const iconMap: Record<string, LucideIcon> = {
-  Brain,
-  Sparkles,
-  GitBranch,
-  PhoneCall,
-  Rocket,
-  Database,
-  Mic,
-  AudioLines,
-  Globe,
-  Palette,
-  FileCode,
-  Triangle,
-  FileText,
-  Webhook,
-};
-
-function MarqueeRow({
-  items,
-  direction = "left",
-  speed = 30,
-}: {
-  items: { name: string; icon: string }[];
-  direction?: "left" | "right";
-  speed?: number;
-}) {
-  // Duplicate items enough times for seamless loop
-  const duplicated = [...items, ...items, ...items, ...items];
-
-  return (
-    <div className="relative overflow-hidden w-full">
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-20 sm:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-      <motion.div
-        className="flex gap-4 w-max"
-        animate={{
-          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
-        }}
-        transition={{
-          x: {
-            duration: speed,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
-      >
-        {duplicated.map((tech, i) => {
-          const Icon = iconMap[tech.icon];
-          return (
-            <div
-              key={`${tech.name}-${i}`}
-              className="group flex items-center gap-3 rounded-full bg-surface border border-white/5 hover:border-primary/20 px-5 py-3 transition-all duration-300 hover:bg-white/[0.04] cursor-default shrink-0"
-            >
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 border border-primary/10 group-hover:border-primary/25 transition-colors">
-                {Icon && (
-                  <Icon
-                    size={16}
-                    className="text-primary-300 group-hover:text-primary-200 transition-colors"
-                  />
-                )}
-              </div>
-              <span className="text-sm font-medium text-foreground-muted group-hover:text-foreground transition-colors whitespace-nowrap">
-                {tech.name}
-              </span>
-            </div>
-          );
-        })}
-      </motion.div>
-    </div>
-  );
-}
 
 export function TechStackSection() {
   return (
-    <SectionContainer id="tech-stack">
+    <SectionContainer id="stack">
       <motion.div
-        className="text-center mb-12"
-        variants={blurFadeInUp}
+        className="max-w-3xl mx-auto"
+        variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true, margin: "-60px" }}
       >
-        <Badge>Technology</Badge>
-        <h2 className="section-title">Powered By the Best</h2>
-        <p className="section-subtitle">
-          We use the best AI and automation tools to build systems that are
-          reliable, scalable, and powerful.
-        </p>
-      </motion.div>
+        <motion.div variants={blurFadeInUp} className="mb-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary-300 mb-4">
+            Stack
+          </p>
+          <h2 className="section-title text-left">
+            The tools I actually use.
+          </h2>
+        </motion.div>
 
-      <div className="space-y-4">
-        <MarqueeRow items={TECH_STACK_ROW1} direction="left" speed={35} />
-        <MarqueeRow items={TECH_STACK_ROW2} direction="right" speed={40} />
-      </div>
+        <motion.div
+          variants={blurFadeInUp}
+          className="rounded-2xl bg-surface border border-white/5 overflow-hidden"
+        >
+          {TECH_STACK_TABLE.map((row, i) => (
+            <motion.div
+              key={row.layer}
+              className={`grid grid-cols-[140px,1fr] sm:grid-cols-[180px,1fr,1fr] gap-0 ${
+                i < TECH_STACK_TABLE.length - 1 ? "border-b border-white/5" : ""
+              }`}
+              initial={{ opacity: 0, x: -12 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Layer label */}
+              <div className="px-6 py-5 border-r border-white/5">
+                <span className="text-xs font-semibold uppercase tracking-wider text-foreground-dim">
+                  {row.layer}
+                </span>
+              </div>
+
+              {/* Tools */}
+              <div className="px-6 py-5 sm:border-r border-white/5">
+                <span className="text-sm font-medium text-foreground">
+                  {row.tools}
+                </span>
+              </div>
+
+              {/* Note */}
+              {row.note && (
+                <div className="hidden sm:block px-6 py-5">
+                  <span className="text-xs text-foreground-dim">{row.note}</span>
+                </div>
+              )}
+              {!row.note && (
+                <div className="hidden sm:block px-6 py-5" />
+              )}
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
     </SectionContainer>
   );
 }

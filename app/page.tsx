@@ -1,26 +1,23 @@
 import { HeroSection } from "@/components/sections/HeroSection";
-import { FlowSection } from "@/components/sections/FlowSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { TechStackSection } from "@/components/sections/TechStackSection";
 import { AutomationDemoSection } from "@/components/sections/AutomationDemoSection";
 import { WorkflowGallerySection } from "@/components/sections/WorkflowGallerySection";
-import { ConversionSection } from "@/components/sections/ConversionSection";
-import { TechStackSection } from "@/components/sections/TechStackSection";
-import { CaseStudiesSection } from "@/components/sections/CaseStudiesSection";
-import { FAQSection } from "@/components/sections/FAQSection";
-import { CTASection } from "@/components/sections/CTASection";
+import { ContactSection } from "@/components/sections/ContactSection";
+
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <AutomationDemoSection />
-      <FlowSection />
-      <ConversionSection />
-      <ServicesSection />
+      <AboutSection />
       <CaseStudiesSection />
-      <WorkflowGallerySection />
+      <ServicesSection />
       <TechStackSection />
-      <FAQSection />
-      <CTASection />
+      <AutomationDemoSection />
+      <WorkflowGallerySection />
+      <ContactSection />
     </>
   );
 }

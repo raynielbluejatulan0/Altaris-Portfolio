@@ -4,7 +4,6 @@ import localFont from "next/font/local";
 import { constructMetadata, getJsonLd } from "@/lib/metadata";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
-import { FloatingCTA } from "@/components/ui/FloatingCTA";
 import "./globals.css";
 
 const inter = Inter({
@@ -61,7 +60,6 @@ export default function RootLayout({
         <main id="main-content" role="main">
           {children}
         </main>
-        <FloatingCTA />
         <Footer />
       </body>
     </html>

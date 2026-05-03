@@ -1,78 +1,71 @@
 export const SITE = {
-  name: "Altaris",
-  tagline: "AI Automation Systems That Run Your Business",
+  name: "Rayniel Blue Jatulan",
+  tagline: "AI Automation Specialist",
   description:
-    "Altaris builds AI-powered automation systems that help businesses reduce manual work, streamline operations, and scale efficiently with intelligent agents and workflows.",
+    "AI Automation Specialist building voice agents, messaging systems, and workflow automation. Open to freelance and full-time roles. GMT+8.",
   url: "https://altaris.ai",
 };
 
 export const NAV_LINKS = [
-  { label: "How It Works", href: "#flow" },
-  { label: "Live Demos", href: "#automation" },
-  { label: "Who This Is For", href: "#who-its-for" },
-  { label: "Services", href: "#services" },
-  { label: "Behind the Scenes", href: "#workflows" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#cta" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "What I Build", href: "#skills" },
+  { label: "Stack", href: "#stack" },
+  { label: "Demos", href: "#demos" },
+  { label: "Workflows", href: "#workflows" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const SERVICES = [
   {
-    title: "AI Voice Receptionist",
+    title: "AI Voice Receptionist (Inbound)",
     description:
-      "Your AI picks up every call, understands what the caller needs, answers questions from your knowledge base, and books appointments — all in a natural voice conversation.",
-    icon: "Phone" as const,
-    highlight: "24/7 · Zero missed calls",
-    tags: ["VAPI", "Claude", "ElevenLabs", "Deepgram"],
-    features: [
-      "Natural voice conversations",
-      "Real-time calendar booking",
-      "Multilingual support",
-      "Human handoff when needed",
-    ],
+      "24/7 phone answering with VAPI, Claude, and ElevenLabs. The AI understands callers, answers questions from a knowledge base, and books appointments in real-time. Multilingual support and human handoff built in.",
+  },
+  {
+    title: "AI Outbound Follow-Up Calls",
+    description:
+      "Automated follow-up calls to leads and past clients. Each call pulls CRM history for context, handles DND and opt-out compliance, and logs outcomes automatically.",
   },
   {
     title: "Multi-Channel Messaging Agent",
     description:
-      "One AI agent handles all your messaging channels. Customers reach out wherever they prefer — your AI responds instantly, answers FAQs, and guides them to book.",
-    icon: "MessageSquare" as const,
-    highlight: "8 channels · 1 AI agent",
-    tags: ["SMS", "Messenger", "Instagram", "WhatsApp", "Email", "Live Chat"],
-    features: [
-      "Instant replies across all platforms",
-      "Context-aware conversations",
-      "Auto-escalation to human",
-      "Appointment booking built-in",
-    ],
+      "One AI agent across 8 channels — SMS, Messenger, Instagram DM, WhatsApp, Email, Live Chat, Google Business Messages. Handles FAQs, books appointments, and escalates on complaints.",
   },
   {
-    title: "Workflow Automation",
+    title: "Intelligent Booking System",
     description:
-      "The engine behind everything. Every call, message, and booking triggers a chain of automated actions — no manual steps, no copy-pasting between tools.",
-    icon: "Workflow" as const,
-    highlight: "18 workflows · 146 nodes",
-    tags: ["n8n", "Webhooks", "APIs", "Supabase"],
-    features: [
-      "End-to-end automation",
-      "Real-time data sync",
-      "Error handling built-in",
-      "Scalable architecture",
-    ],
+      "Real-time calendar availability checks with natural language date understanding. Timezone-aware and supports multiple calendar providers simultaneously.",
   },
   {
-    title: "CRM Integration & Follow-Up",
+    title: "CRM Integration & Automation",
     description:
-      "Every interaction creates or updates a contact automatically. Call transcripts are logged, pipeline stages move forward, and follow-up sequences fire — without anyone touching the CRM.",
-    icon: "Users" as const,
-    highlight: "Zero manual data entry",
-    tags: ["GoHighLevel", "ActiveCampaign", "Supabase"],
-    features: [
-      "Auto contact creation",
-      "Call transcript logging",
-      "Pipeline stage tracking",
-      "Automated follow-up sequences",
-    ],
+      "Every interaction creates or updates a contact. Call transcripts get logged, pipeline stages move automatically, and missed call tasks fire without anyone touching the CRM.",
   },
+  {
+    title: "Client Onboarding (White-Label)",
+    description:
+      "New clients onboard in 5–10 minutes via config only — no workflow changes needed. Each client gets isolated credentials, knowledge base, and CRM connection.",
+  },
+  {
+    title: "End-of-Call Intelligence",
+    description:
+      "After every call, the AI extracts contact info from the transcript, maps the outcome to a CRM stage, sends a booking confirmation via SMS, and logs call analytics.",
+  },
+];
+
+export const TECH_STACK_TABLE = [
+  { layer: "Automation Engine", tools: "n8n", note: "18 workflows, 146 nodes" },
+  { layer: "Voice AI", tools: "VAPI · Deepgram Nova-3 · ElevenLabs", note: "" },
+  {
+    layer: "LLM",
+    tools: "Claude Sonnet 4.6 · Gemini 2.5 Flash",
+    note: "Claude primary, Gemini fallback",
+  },
+  { layer: "CRM", tools: "GoHighLevel · ActiveCampaign", note: "" },
+  { layer: "Database", tools: "Supabase · PostgreSQL", note: "Config + vector search" },
+  { layer: "Knowledge Base", tools: "Google Docs · Vector embeddings", note: "" },
+  { layer: "Calendars", tools: "GHL Calendar · Symplast", note: "" },
 ];
 
 export const TECH_STACK_ROW1 = [
@@ -129,12 +122,15 @@ export const CASE_STUDIES = [
     title: "Dental Clinic Automation",
     client: "SmileBright Dental",
     industry: "Healthcare",
-    before: "12+ missed calls daily, 40hrs/month wasted on manual scheduling, patients hanging up and booking competitors",
-    after: "Booked 32 patients in 14 days, 40hrs/month freed up, zero missed calls — front desk focuses on in-office care",
+    before:
+      "12+ missed calls daily, 40hrs/month wasted on manual scheduling, patients hanging up and booking competitors",
+    after:
+      "Booked 32 patients in 14 days, 40hrs/month freed up, zero missed calls — front desk focuses on in-office care",
     problem:
-      "The clinic was losing potential patients due to missed calls and slow manual appointment booking. Staff spent 40+ hours per month on scheduling alone.",
+      "The clinic was losing potential patients due to missed calls and slow manual scheduling. Staff spent 40+ hours a month on booking alone.",
     solution:
-      "We deployed a Messenger AI chatbot integrated with their booking system via n8n workflow automation. Patients can now book, reschedule, and get reminders automatically.",
+      "I built a Messenger AI chatbot integrated with their booking system via n8n. Patients can now book, reschedule, and get reminders automatically.",
+    techBuilt: "n8n + Messenger AI + booking system integration",
     techUsed: "Messenger AI + n8n + Booking System",
     results: [
       { metric: "80%", label: "Reduction in manual booking work" },
@@ -146,12 +142,15 @@ export const CASE_STUDIES = [
     title: "HVAC Service Lead Recovery",
     client: "CoolBreeze HVAC",
     industry: "Home Services",
-    before: "60% of after-hours calls lost to voicemail, $4,000+/week in missed emergency repairs, no way to capture overnight leads",
-    after: "Handled 500+ calls in first month, 35% more jobs booked, $6,200/month in recovered revenue from after-hours leads",
+    before:
+      "60% of after-hours calls lost to voicemail, $4,000+/week in missed emergency repairs, no way to capture overnight leads",
+    after:
+      "Handled 500+ calls in first month, 35% more jobs booked, $6,200/month in recovered revenue from after-hours leads",
     problem:
       "Over 60% of after-hours calls went to voicemail. Emergency repair requests were lost overnight, costing thousands in missed revenue weekly.",
     solution:
-      "We built an AI voice receptionist that answers every call 24/7, qualifies the urgency, books service appointments, and dispatches the on-call technician via SMS — all automatically.",
+      "I built an AI voice receptionist that answers every call 24/7, qualifies the urgency, books service appointments, and dispatches the on-call technician via SMS — automatically.",
+    techBuilt: "VAPI voice receptionist + n8n + GoHighLevel CRM dispatch",
     techUsed: "VAPI Voice AI + n8n + GoHighLevel CRM",
     results: [
       { metric: "95%", label: "Calls answered instantly" },
@@ -163,12 +162,15 @@ export const CASE_STUDIES = [
     title: "Med Spa Multi-Channel Booking",
     client: "GlowUp Aesthetics",
     industry: "Med Spa",
-    before: "1,200+ monthly messages across 6 channels, 1 overwhelmed front desk person, 4-hour avg response, 40% of leads ghosted",
-    after: "1,200+ messages handled automatically, 5-second response time, increased conversion by 40%, zero missed inquiries",
+    before:
+      "1,200+ monthly messages across 6 channels, 1 overwhelmed front desk person, 4-hour avg response, 40% of leads ghosted",
+    after:
+      "1,200+ messages handled automatically, 5-second response time, increased conversion by 40%, zero missed inquiries",
     problem:
-      "Leads were coming in from Instagram, WhatsApp, and the website but the front desk could only handle one channel at a time. Response times averaged 4+ hours, and 40% of inquiries never got a reply.",
+      "Leads were coming in from Instagram, WhatsApp, and the website but the front desk could only handle one channel at a time. Response times averaged 4+ hours and 40% of inquiries never got a reply.",
     solution:
-      "We deployed a single AI messaging agent across all 6 channels that answers FAQs, recommends treatments, checks real-time availability, and books consultations — with automatic CRM logging and follow-up sequences.",
+      "I deployed a single AI messaging agent across all 6 channels. It answers FAQs, recommends treatments, checks real-time availability, and books consultations — with automatic CRM logging and follow-up sequences.",
+    techBuilt: "Single AI agent across 6 channels + calendar API + CRM logging",
     techUsed: "Multi-Channel AI + n8n + Calendar API + CRM",
     results: [
       { metric: "5s", label: "Average response time" },
@@ -188,22 +190,14 @@ export const VIDEO_DEMOS = [
   {
     title: "AI Voice Receptionist",
     description:
-      "Watch the AI handle a real inbound call — answering questions, checking availability, and booking an appointment in real time.",
+      "An inbound call handled start to finish. The AI answers, checks availability, and books — no human involved.",
     videoSrc: "/videos/voice-demo.mp4",
-    badge: "Most Requested",
-    badgeVariant: "success" as const,
-    tags: ["24/7 Calls", "Real-time booking", "CRM synced"],
-    featured: true,
   },
   {
     title: "AI Messaging Agent",
     description:
-      "See how the AI responds instantly on Messenger, qualifies the lead, and books an appointment — all while you sleep.",
+      "Messenger, Instagram, SMS — one agent across all three. Lead comes in, gets qualified, gets booked.",
     videoSrc: "/videos/messaging-demo.mp4",
-    badge: "Messenger / IG / SMS",
-    badgeVariant: "secondary" as const,
-    tags: ["Instant replies", "Lead qualification", "Auto-booking"],
-    featured: false,
   },
 ];
 
@@ -268,27 +262,32 @@ export const WORKFLOW_DEMOS = [
 export const ABOUT_PROFILE = {
   name: "Rayniel Blue Jatulan",
   title: "AI Automation Specialist",
-  subtitle: "I build the AI systems that replace your front desk — so your team focuses on patients, not phones.",
+  subtitle:
+    "I build the AI systems that replace your front desk — so your team focuses on patients, not phones.",
   photo: "/images/dark.png",
-  availability: "Available for freelance & agency partnerships",
-  timezone: "GMT+8 · Async-first · Remote",
-  bio: "I've been working in AI since 2022 — starting with generative AI and content creation before going all-in on AI automation in 2025. Today, I build production-ready voice agents, messaging systems, and workflow automation that handle calls, book appointments, and update CRMs — running 24/7 for real businesses.",
+  availability: "Open to freelance & full-time roles",
+  timezone: "GMT+8 · Remote",
+  bio: "I've been in AI since 2022. Started with generative content — images, video, social. Spent 2024 deep in prompt engineering, fine-tuning LLM outputs for real business use cases.\n\nIn 2025 I went all-in on automation. Today I build voice agents, messaging systems, and workflow automation. They run 24/7. They handle real calls and real bookings. That's the work.",
   differentiators: [
     {
       title: "Production-First, Not Prototype",
-      detail: "Every system I build is live and handling real calls, real messages, and real bookings — not just a demo.",
+      detail:
+        "Every system I build is live and handling real calls, real messages, and real bookings — not just a demo.",
     },
     {
       title: "Full-Stack AI, One Person",
-      detail: "Voice AI, messaging, booking, CRM, workflows — I handle the entire pipeline end-to-end. No need to hire a team.",
+      detail:
+        "Voice AI, messaging, booking, CRM, workflows — I handle the entire pipeline end-to-end. No need to hire a team.",
     },
     {
       title: "Built for Scale",
-      detail: "My architecture supports multi-client deployment. Onboard a new client in 10 minutes with zero workflow changes.",
+      detail:
+        "My architecture supports multi-client deployment. Onboard a new client in 10 minutes with zero workflow changes.",
     },
     {
       title: "Business-Driven, Not Tech-Driven",
-      detail: "I start with the business outcome — more bookings, fewer missed calls — and work backwards to the automation.",
+      detail:
+        "I start with the business outcome — more bookings, fewer missed calls — and work backwards to the automation.",
     },
   ],
   capabilities: [
@@ -341,7 +340,7 @@ export const ABOUT_PROFILE = {
     { layer: "Voice AI", tech: "VAPI + Deepgram Nova-3 + ElevenLabs" },
     {
       layer: "AI / LLM",
-      tech: "Claude Sonnet 4.5 (primary), Gemini 2.5 Flash (fallback)",
+      tech: "Claude Sonnet 4.6 (primary), Gemini 2.5 Flash (fallback)",
     },
     { layer: "CRM", tech: "GoHighLevel, ActiveCampaign" },
     { layer: "Database", tech: "Supabase (config + vector search), PostgreSQL" },
@@ -354,25 +353,23 @@ export const ABOUT_PROFILE = {
   timeline: [
     {
       year: "2022",
-      label: "Started in AI — generative AI, images & video creation",
+      label: "Generative AI — images & video creation",
     },
     {
       year: "2023",
-      label: "AI content creation — YouTube, UGC, social media",
+      label: "AI content — YouTube, UGC, social media",
     },
     {
       year: "2024",
-      label:
-        "AI Prompt Engineer — crafting advanced prompts for LLMs, fine-tuning outputs for business use cases, and building custom GPTs",
+      label: "Prompt Engineering — LLMs, fine-tuning, custom GPTs",
     },
     {
       year: "2025",
-      label:
-        "All-in on AI automation — voice agents, messaging, booking, CRM",
+      label: "AI Automation — voice agents, messaging, workflows",
     },
   ],
   demoVideos: [
-    { title: "Voice AI Receptionist Demo", url: "#automation" },
-    { title: "Messaging AI Demo", url: "#automation" },
+    { title: "Voice AI Receptionist Demo", url: "#demos" },
+    { title: "Messaging AI Demo", url: "#demos" },
   ],
 };

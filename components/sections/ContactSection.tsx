@@ -5,7 +5,6 @@ import { Mail, Phone, ArrowUpRight } from "lucide-react";
 import { staggerContainer, blurFadeInUp } from "@/lib/animations";
 import { CONTACT } from "@/lib/constants";
 import { SectionContainer } from "@/components/ui/SectionContainer";
-import { Badge } from "@/components/ui/Badge";
 
 const contactMethods = [
   {
@@ -41,14 +40,9 @@ export function ContactSection() {
   return (
     <SectionContainer id="contact">
       <div className="text-center mb-16">
-        <Badge>Contact</Badge>
         <h2 className="section-title">
-          Get In Touch
+          Let&apos;s talk.
         </h2>
-        <p className="section-subtitle">
-          Ready to explore automation for your business? Reach out and let&apos;s
-          talk about what AI can do for you.
-        </p>
       </div>
 
       <motion.div

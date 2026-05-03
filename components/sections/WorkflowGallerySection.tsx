@@ -7,7 +7,6 @@ import { X } from "lucide-react";
 import { staggerContainer, blurFadeInUp } from "@/lib/animations";
 import { WORKFLOW_GALLERY } from "@/lib/constants";
 import { SectionContainer } from "@/components/ui/SectionContainer";
-import { Badge } from "@/components/ui/Badge";
 import { useFocusTrap } from "@/lib/useFocusTrap";
 
 export function WorkflowGallerySection() {
@@ -40,14 +39,12 @@ export function WorkflowGallerySection() {
 
         <div className="relative z-10">
           <div className="text-center mb-16">
-            <Badge>Behind the Scenes</Badge>
-            <h2 className="section-title">
-              The Actual Workflows{" "}
-              <span className="text-gradient">Running Your AI</span>
-            </h2>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary-300 mb-4">
+              Workflows
+            </p>
+            <h2 className="section-title">Under the Hood</h2>
             <p className="section-subtitle">
-              These are real n8n automation workflows powering the voice agents,
-              messaging, booking, and CRM — not mockups.
+              Real n8n workflows. Not mockups.
             </p>
           </div>
 
