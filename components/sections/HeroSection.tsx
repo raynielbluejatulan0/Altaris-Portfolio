@@ -4,26 +4,21 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowDown, MessageCircle } from "lucide-react";
 import { ParticleBackground } from "@/components/ui/ParticleBackground";
-import { ABOUT_PROFILE, IMPACT_STATS } from "@/lib/constants";
+import { ABOUT_PROFILE } from "@/lib/constants";
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center overflow-hidden bg-background"
     >
-      {/* Particle canvas */}
       <ParticleBackground />
-
-      {/* Grid overlay */}
       <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
-
-      {/* Top glow orb */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-primary/8 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Main content */}
-      <div className="relative z-10 flex-1 flex items-center max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-28 pb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
           {/* Left — copy */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -31,53 +26,64 @@ export function HeroSection() {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="text-center lg:text-left"
           >
+            {/* Label */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.5 }}
               className="inline-block mb-6"
             >
-              <span className="text-xs font-mono tracking-[0.2em] uppercase text-primary border border-primary/30 px-3 py-1.5 rounded-sm bg-primary/5">
+              <span className="text-xs font-mono tracking-[0.25em] uppercase text-primary border border-primary/30 px-3 py-1.5 rounded-sm bg-primary/5">
                 {ABOUT_PROFILE.title}
               </span>
             </motion.div>
 
+            {/* Headline — kim-b style: all-caps, bold, split color */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.7 }}
-              className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-heading font-bold text-foreground leading-tight mb-6"
+              className="font-heading font-bold text-foreground leading-[1.05] uppercase tracking-tight mb-6"
+              style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
             >
-              {ABOUT_PROFILE.name}
+              Automate Your Front Desk
+              <br />& Scale Your Business{" "}
+              <span className="text-primary glow-text">
+                Without Hiring
+                <br className="hidden sm:block" /> More Staff
+              </span>
             </motion.h1>
 
+            {/* Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.7 }}
-              className="text-lg sm:text-xl text-foreground-muted leading-relaxed mb-4 max-w-xl mx-auto lg:mx-0"
+              transition={{ delay: 0.35, duration: 0.7 }}
+              className="text-sm font-mono text-foreground-muted leading-relaxed mb-3 max-w-lg mx-auto lg:mx-0"
             >
-              I build AI systems that answer calls, book appointments, and update
-              CRMs — while the business runs.
+              I build AI voice agents, messaging bots, and workflow automations
+              using n8n, VAPI, and Claude — so your business handles calls and
+              bookings 24/7, automatically.
             </motion.p>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="text-sm text-foreground-dim font-mono mb-10"
+              transition={{ delay: 0.45, duration: 0.6 }}
+              className="text-xs text-foreground-dim font-mono mb-10"
             >
               {ABOUT_PROFILE.availability} &middot; {ABOUT_PROFILE.timezone}
             </motion.p>
 
+            {/* CTAs */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
+              transition={{ delay: 0.55, duration: 0.6 }}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
             >
               <a
-                href="#services"
+                href="#what-i-can-build"
                 className="flex items-center gap-2 px-7 py-3 bg-primary text-black font-heading font-bold text-sm rounded-sm hover:bg-primary/90 transition-all duration-200 shadow-glow-sm"
               >
                 See My Work
@@ -117,30 +123,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Stats bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.7, duration: 0.6 }}
-        className="relative z-10 border-t border-primary/10 bg-surface/40 backdrop-blur-sm"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="flex flex-wrap items-center justify-center lg:justify-between gap-6">
-            {IMPACT_STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-2xl font-heading font-bold text-primary glow-text">
-                  {stat.value}{stat.suffix}
-                </div>
-                <div className="text-xs font-mono text-foreground-dim mt-0.5">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </section>
   );
