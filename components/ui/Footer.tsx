@@ -10,7 +10,7 @@ export function Footer() {
       <div className="relative z-10 max-w-2xl mx-auto px-4 text-center">
         {/* Brand name */}
         <p className="text-3xl font-heading font-bold text-primary glow-text tracking-[0.15em] uppercase mb-3">
-          Altaris
+          Rayniel Blue Jatulan
         </p>
 
         {/* Subtitle */}
