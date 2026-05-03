@@ -58,7 +58,7 @@ function MarqueeRow({ items, reverse }: { items: string[]; reverse?: boolean }) 
 
 export function SkillsSection() {
   return (
-    <section id="skills" className="relative py-24 bg-background overflow-hidden">
+    <section id="skills" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
 
       <div className="relative z-10">

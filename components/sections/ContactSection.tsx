@@ -6,7 +6,7 @@ import { CONTACT } from "@/lib/constants";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="relative py-24 bg-background overflow-hidden">
+    <section id="contact" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/6 via-transparent to-transparent pointer-events-none" />
 

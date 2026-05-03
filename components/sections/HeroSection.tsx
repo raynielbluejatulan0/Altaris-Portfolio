@@ -3,17 +3,15 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowDown, MessageCircle } from "lucide-react";
-import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import { ABOUT_PROFILE } from "@/lib/constants";
 
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      <ParticleBackground />
-      <div className="absolute inset-0 bg-grid opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid opacity-30 pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-primary/8 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24">

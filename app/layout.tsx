@@ -3,6 +3,7 @@ import { Bai_Jamjuree, Space_Mono } from "next/font/google";
 import { constructMetadata, getJsonLd } from "@/lib/metadata";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
+import { ParticleBackground } from "@/components/ui/ParticleBackground";
 import "./globals.css";
 
 const baiJamjuree = Bai_Jamjuree({
@@ -45,6 +46,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${baiJamjuree.variable} ${spaceMono.variable} antialiased`}>
+        <ParticleBackground />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-black focus:outline-none"

@@ -262,7 +262,7 @@ export function AutomationProjectsSection() {
   const p = PROJECTS[current];
 
   return (
-    <section id="projects" className="relative py-24 bg-background overflow-hidden">
+    <section id="projects" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-15 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

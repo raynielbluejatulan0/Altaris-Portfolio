@@ -22,12 +22,12 @@ export function ParticleBackground() {
 
     let animId: number;
     const particles: Particle[] = [];
-    const COUNT = 60;
-    const MAX_DIST = 120;
+    const COUNT = 80;
+    const MAX_DIST = 130;
 
     const resize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
     const init = () => {
@@ -36,10 +36,10 @@ export function ParticleBackground() {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
           radius: Math.random() * 1.5 + 0.5,
-          opacity: Math.random() * 0.5 + 0.2,
+          opacity: Math.random() * 0.4 + 0.15,
         });
       }
     };
@@ -47,14 +47,13 @@ export function ParticleBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < MAX_DIST) {
-            const alpha = (1 - dist / MAX_DIST) * 0.15;
+            const alpha = (1 - dist / MAX_DIST) * 0.12;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(0, 255, 255, ${alpha})`;
             ctx.lineWidth = 0.5;
@@ -65,7 +64,6 @@ export function ParticleBackground() {
         }
       }
 
-      // Draw dots
       particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
@@ -85,22 +83,19 @@ export function ParticleBackground() {
     init();
     draw();
 
-    const observer = new ResizeObserver(() => {
-      resize();
-      init();
-    });
-    observer.observe(canvas);
+    window.addEventListener("resize", () => { resize(); init(); });
 
     return () => {
       cancelAnimationFrame(animId);
-      observer.disconnect();
+      window.removeEventListener("resize", () => { resize(); init(); });
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="fixed inset-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 0 }}
       aria-hidden="true"
     />
   );
