@@ -96,21 +96,21 @@ export function AboutMeSection() {
               About Me
             </p>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground uppercase tracking-tight mb-3">
-              Who Am I?
+              About Me
             </h2>
             {/* Cyan underline accent */}
             <div className="w-12 h-0.5 bg-primary mb-8" />
 
             <p className="text-sm font-mono text-foreground-muted leading-relaxed mb-6">
-              I&apos;m an AI Automation Specialist with 3+ years building
-              production systems that replace manual work. My background spans
-              generative AI content creation, prompt engineering for LLMs, and
-              full-stack workflow automation — giving me a unique lens on what AI
-              can realistically do for a business today.
+              AI Automation Specialist with 3+ years building production systems
+              that replace manual work. Background spans generative AI content
+              creation, prompt engineering for LLMs, and full-stack workflow
+              automation — a unique lens on what AI can realistically do for a
+              business today.
             </p>
             <p className="text-sm font-mono text-foreground-muted leading-relaxed">
-              I specialize in voice agents, multi-channel messaging bots, and
-              n8n workflow design. Every system I build runs live, handles real
+              Specializing in voice agents, multi-channel messaging bots, and
+              n8n workflow design. Every system runs live, handles real
               interactions, and operates 24/7 — without anyone babysitting it.
             </p>
           </motion.div>
