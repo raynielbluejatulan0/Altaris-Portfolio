@@ -7,9 +7,10 @@ export const SITE = {
 };
 
 export const NAV_LINKS = [
+  { label: "Capabilities", href: "#what-i-can-build" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
-  { label: "Skills", href: "#skills" },
+  { label: "Demos", href: "#demos" },
   { label: "Contact", href: "#contact" },
 ];
 
